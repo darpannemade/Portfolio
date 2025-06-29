@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: 'thrustline';
-  src: url('./font/Thrustline Demo.ttf') format('truetype');
+  src: url('./Thrustline Demo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: 'gumona';
-  src: url('./Gumona\ DEMO.otf') format('opentype');
+  src: url('./Gumona DEMO.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
