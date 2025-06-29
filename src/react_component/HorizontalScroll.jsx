@@ -30,7 +30,7 @@ const projects = [
     description: "Classifies tumors in brain using ensemble DL model of ResNet50+DenseNet201"
   },
   {
-    image: "/bg3jpg",
+    image: "/bg3.png",
     title: "Social Media Caption Generator",
     description: "CNN-LSTM Based social media post caption generator"
   },
