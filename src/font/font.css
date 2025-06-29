@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'humion';
+  src: url('./font/Humion DEMO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'thrustline';
+  src: url('./font/Thrustline Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Madison42';
+  src: url('./font/Madison.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rosan';
+  src: url('./font/UT Rosantura Trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'baneta';
+  src: url('./font/Baneta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dick';
+  src: url('./font/Dicknison-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gumona';
+  src: url('./font/Gumona DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'varelia';
+  src: url('./font/Varelia-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JHC';
+  src: url('./font/JHCCordelius Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'modern';
+  src: url('./font/Moderniz.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
