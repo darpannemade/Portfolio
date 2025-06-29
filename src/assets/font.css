@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: 'gumona';
-  src: url('./Gumona DEMO.otf') format('opentype');
+  src: url('./Gumona\ DEMO.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
