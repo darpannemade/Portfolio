@@ -10,30 +10,36 @@ gsap.registerPlugin(ScrollTrigger);
 // You can easily add/remove projects here - everything else will adjust automatically
 const projects = [
   {
+    image: "/bg5.png",
+    title: "ODIN",
+    description: "Web3 site for Cryptofinance with AI chatbot, Wallet Integration and NFT Marketplace"
+  },
+
+  {
+    image: "/bg7.png",
+    title: "EvoCine — Multimodal Cinematic Trailer Generator",
+    description: "Created a multimodal GenAI pipeline using SDXL, AnimateDiff, and Stable Video Diffusion to generate cinematic scenes from text."
+  },
+  {
     image: "/bg2.png",
     title: "UAV Surveillance System",
     description: "Surveillance System designed for UAV using deep learning along with Thermal mode"
   },
+  
+  {
+    image: "/bg8.png",
+    title: "Email Productivity Agent",
+    description: "Developed an offline LLaMA 3 automation agent that handles emails along with n8n automation "
+  },
+
   {
     image: "/bg4.jpg",
     title: "TuneTrails",
     description: "Music Streaming app made using React & Tailwind"
   },
-  {
-    image: "/bg5.png",
-    title: "ODIN",
-    description: "Web3 site for Cryptofinance with AI chatbot, Wallet Integration and NFT Marketplace"
-  },
-  {
-    image: "/bg6.png",
-    title: "Brain Tumor Classification",
-    description: "Classifies tumors in brain using ensemble DL model of ResNet50+DenseNet201"
-  },
-  {
-    image: "/bg3.png",
-    title: "Social Media Caption Generator",
-    description: "CNN-LSTM Based social media post caption generator"
-  },
+  
+  
+  
 ];
 
 // Spring configuration for tilted cards
