@@ -127,34 +127,51 @@ const handleNavClick = (item, href) => {
           </div>
         </div>
 
-        <div className="prof">
+        {/* <div className="prof">
 
           <RotatingText
-              texts={['ML Developer', 'Data Scientist', 'AI Engineer','Frontend Developer' ]}
-              mainClassName="px-2 sm:px-2 md:px-3  text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg w-1/2 sm:w-3/4 md:w-1/2 text-1xl sm:text-4xl md:text-2xl"
-              style={{ backgroundColor: 'rgb(255, 187, 10)' ,height:"45px",alignItems: 'center'}}
-              staggerFrom={"last"}
-              initial={{ y: "100%" }}
+              texts={['ML Developer', 'Data Scientist', 'AI Engineer', 'Frontend Developer']}
+              mainClassName="rotating-pill"
+              staggerFrom="last"
+              initial={{ y: '100%' }}
               animate={{ y: 0 }}
-              exit={{ y: "-120%" }}
+              exit={{ y: '-120%' }}
               staggerDuration={0.025}
               splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-              transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={3000}
-              
-          />
+              transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+            />
 
-        </div>
-
-        
-
-
-        {/* <div class="linkcont">
-          <button className="git">Github</button>
-          <button className="link">Linkedin</button>
-          <button className="mail">Gmail</button>
 
         </div> */}
+
+
+
+        {/* profile image + rotating pill grouped together */}
+<div className="hero-row">
+  <div className="imgcont">
+    <img src={logo} alt="Logo" className="profile-logo" />
+  </div>
+
+  <div className="prof">
+    <RotatingText
+      texts={['ML Developer', 'Data Scientist', 'AI Engineer', 'Frontend Developer']}
+      mainClassName="rotating-pill"        // <-- use your CSS pill class
+      staggerFrom="last"
+      initial={{ y: '100%' }}
+      animate={{ y: 0 }}
+      exit={{ y: '-120%' }}
+      staggerDuration={0.025}
+      splitLevelClassName="overflow-hidden pb-0.5"
+      transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+      rotationInterval={3000}
+    />
+  </div>
+</div>
+
+
+
+
+
 
         <div className="linkcont" style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
               <NeonButton 
@@ -182,9 +199,9 @@ const handleNavClick = (item, href) => {
               </NeonButton>
 </div>
 
-<div className="imgcont">
+{/* <div className="imgcont">
  <img src={logo} alt="Logo" className="profile-logo" />
-</div>
+</div> */}
       </section>
 
 
