@@ -20,6 +20,20 @@ body {
     
 }
 
+/* Global layout safety – keeps width consistent across browsers */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;  /* stops horizontal scroll + white strips */
+}
+
+
 
 .logo{
   color: aliceblue;
@@ -83,7 +97,6 @@ body {
     top: 15rem;
 }
 
-
 #name1p1{
     font-size: 40px;
     margin: 0;
@@ -136,11 +149,31 @@ body {
     font-family: "baneta","Sans Serif";
 }
 
-.linkcont{
-  display: inline-flex;
+.linkcont {
   position: relative;
-  top:50vh;
-  left:-61vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  top: 6rem;
+  left: 0;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .linkcont {
+    margin-top: 2.5rem;
+    gap: 2rem;
+  }
+}
+
+/* mobile: stack vertically */
+@media (max-width: 640px) {
+  .linkcont {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 .profile-logo {
@@ -218,6 +251,42 @@ body {
   animation: blurReveal 0.8s ease-out 1.3s both;
 }
 
+/* Rotating job title pill */
+.rotating-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(255, 187, 10);
+  border-radius: 10px;           /* full pill */
+  padding: 0.4rem 2.5rem;
+  min-width: 230px;
+  max-width: 250px;
+
+  font-family: "baneta", "Sans Serif";
+  font-weight: 600;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+/* Make sure *everything* inside is black, no matter what */
+.rotating-pill,
+.rotating-pill * {
+  color: #000 ;
+}
+
+/* Optional: better on small screens */
+@media (max-width: 640px) {
+  .rotating-pill {
+    width: 80vw;
+  }
+}
+
+
+
+
 /* Your existing page2 styles continue below... */
 .page2{
   height: 100vh;
@@ -287,6 +356,7 @@ body {
   left: -38rem;
   font-size: 20px;
   font-family: "baneta","Sans Serif";
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
 }
 
 .ver{
@@ -548,4 +618,232 @@ body {
     --bg-color: rgba(0, 0, 0, 0.25);
     --highlight: rgba(255, 255, 255, 0.15);
   }
+
+/* =======================================================
+   TABLET ADJUSTMENTS (769px – 1024px)
+   Keeps layout similar but reduces extreme offsets
+   ======================================================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+
+  .page1 {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* bring the hero text a bit more to center */
+  .name_cont {
+    left: 8rem;   /* was 19rem */
+    top: 10rem;   /* slightly up so everything fits */
+  }
+
+  #name1p1 {
+    top: 10rem;   /* was 16rem */
+    left: 4rem;   /* was 8rem */
+    font-size: 32px;
+  }
+
+  #name1p2,
+  #name1p4 {
+    font-size: 24px;
+  }
+
+  #name1p3 {
+    font-size: 42px;
+  }
+
+  /* move the rotating pill + job title closer */
+  .prof {
+    left: 60vh;   /* was 96vh – pulls it left */
+    top: 18vh;
+  }
+
+  /* keep the social links visible */
+  .linkcont {
+    left: -40vh;  /* was -61vh */
+    top: 45vh;
+  }
+
+  /* profile image slightly smaller to fit better */
+  .profile-logo {
+    left: 34rem;  /* was 47rem */
+    top: 3rem;
+    width: 140px;
+    height: 140px;
+  }
+
+  /* center navbar better on tablet */
+  .navbar ul {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* =======================================================
+   MOBILE LAYOUT (<= 768px)
+   Full stack layout, everything centered
+   ======================================================= */
+@media (max-width: 768px) {
+
+  .page1 {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .name_cont {
+    position: static;
+    left: auto;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  #name1p1,
+  #name1p2,
+  #name1p3,
+  #name1p4,
+  #name1p5 {
+    position: static;
+    left: auto;
+    top: auto;
+    margin: 0;
+  }
+
+  #name1p5 {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  #name1p1 {
+    font-size: 1.8rem;
+  }
+
+  #name1p2,
+  #name1p4 {
+    font-size: 1.1rem;
+  }
+
+  #name1p3 {
+    font-size: 1.3rem;
+  }
+
+  .prof {
+    position: static;
+    left: auto;
+    top: auto;
+    margin: 1.5rem auto 1.5rem;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+
+  .linkcont {
+    position: static;
+    top: auto;
+    left: auto;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .imgcont {
+    margin-top: 2rem;
+  }
+
+  .profile-logo {
+    position: static;
+    left: auto;
+    top: auto;
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+  }
+
+  .navbar li {
+    padding-left: 1.3rem;
+  }
+}
+
+/* === HERO LAYOUT FIX: image + rotating pill together === */
+
+.hero-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: 11rem;
+  margin-left: 30rem;
+}
+
+/* Inside the hero-row we cancel the old manual offsets */
+.hero-row .prof,
+.hero-row .imgcont,
+.hero-row .profile-logo {
+  position: static;
+  left: auto;
+  top: auto;
+}
+
+/* keep your circular photo size */
+.hero-row .profile-logo {
+  width: 160px;
+  height: 160px;
+}
+
+/* tablet tweaks */
+@media (max-width: 1024px) {
+  .hero-row {
+    gap: 1.5rem;
+    margin-top: clamp(1.5rem, 5vh, 3rem);
+  }
+}
+
+/* mobile: stack vertically, image above pill */
+@media (max-width: 640px) {
+  .hero-row {
+    flex-direction: column;
+  }
+
+  .hero-row .profile-logo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* prevent the white strip / horizontal scroll on some viewports */
+body {
+  overflow-x: hidden;
+}
+
+
+
+
+
 }
