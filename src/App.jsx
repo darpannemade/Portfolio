@@ -60,30 +60,13 @@ function App() {
     }
   };
 
-  return (
+return (
     <>
       {showSplash && (
         <IntroSplash onEnter={() => setShowSplash(false)} />
       )}
-      <div className="App" style={{
-        opacity: showSplash ? 0 : 1,
-        filter: showSplash ? 'blur(12px)' : 'blur(0px)',
-        transform: showSplash ? 'translateY(18px)' : 'translateY(0px)',
-        transition: showSplash
-          ? 'none'
-          : 'opacity 0.7s ease 0.1s, filter 0.7s ease 0.1s, transform 0.7s ease 0.1s',
-      }}>
-      {/* SVG filter for glass distortion */}
-      <svg style={{ display: 'none' }}>
-        <defs>
-          <filter id="glass-distortion">
-            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
-          </filter>
-        </defs>
-      </svg>
 
-      {/* ── NAVBAR ── */}
+      {/* ── NAVBAR outside .App so filter/transform don't trap it ── */}
       <div className="navbar">
         <nav className="glass-nav">
           <div className="glass-filter"></div>
@@ -111,9 +94,26 @@ function App() {
         </nav>
       </div>
 
+      <div className="App" style={{
+        opacity: showSplash ? 0 : 1,
+        filter: showSplash ? 'blur(12px)' : 'blur(0px)',
+        transform: showSplash ? 'translateY(18px)' : 'translateY(0px)',
+        transition: showSplash
+          ? 'none'
+          : 'opacity 0.7s ease 0.1s, filter 0.7s ease 0.1s, transform 0.7s ease 0.1s',
+      }}>
+      {/* SVG filter for glass distortion */}
+      <svg style={{ display: 'none' }}>
+        <defs>
+          <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+          </filter>
+        </defs>
+      </svg>
+
       {/* ── CIRCULAR LOGO ── */}
       <CircularText text="DNDNDNDN" onHover="speedUp" spinDuration={10} className="logo" fontSize="16px" repeat={4} />
-
       {/* ══════════════════════════════════════
           PAGE 1 — HERO
           IMPROVEMENT 1: BlurText on hero name
