@@ -11,7 +11,7 @@ const projects = [
     title: "ODIN",
     description: "Web3 site for Cryptofinance with AI chatbot, Wallet Integration and NFT Marketplace",
     github: "https://github.com/darpannemade/ODIN",
-    live: null,
+    live: "https://darpannemade-odin.vercel.app/",
   },
   {
     image: "/bg7.png",
