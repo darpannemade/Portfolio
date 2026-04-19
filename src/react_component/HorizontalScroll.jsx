@@ -17,7 +17,7 @@ const projects = [
     image: "/bg7.png",
     title: "EvoCine",
     description: "Multimodal GenAI pipeline using SDXL, AnimateDiff & Stable Video Diffusion to generate cinematic scenes from text.",
-    github: "https://github.com/darpannemade",
+    github: "https://darpannemade-odin.vercel.app",
     live: null,
   },
   {
