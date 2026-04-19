@@ -86,7 +86,7 @@ function TiltedProjectCard({ project, index, cardWidth, cardHeight }) {
   return (
     <motion.a
       ref={ref}
-      href={project.github || project.live || '#'}
+      href={project.live || project.github || '#'}
       target={project.github || project.live ? '_blank' : undefined}
       rel="noreferrer"
       draggable={false}
